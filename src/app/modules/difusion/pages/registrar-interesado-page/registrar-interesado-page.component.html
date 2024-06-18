@@ -1,0 +1,141 @@
+<div class="container">
+  <h1 class="text-center mt-4">Cursos y Horarios</h1>
+  <div class="accordion" id="cursosAccordion">
+    <div class="card">
+      <div class="card-header" id="headingCurso1">
+        <h2 class="mb-0">
+          <button
+            class="btn btn-link"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseCurso1"
+            aria-expanded="true"
+            aria-controls="collapseCurso1"
+          >
+            Curso 1
+          </button>
+        </h2>
+      </div>
+      <div
+        id="collapseCurso1"
+        class="collapse show"
+        aria-labelledby="headingCurso1"
+        data-parent="#cursosAccordion"
+      >
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">Lunes: 09:00 - 11:00</li>
+            <li class="list-group-item">Martes: 14:00 - 16:00</li>
+            <li class="list-group-item">Miércoles: 08:00 - 10:00</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingCurso2">
+        <h2 class="mb-0">
+          <button
+            class="btn btn-link collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseCurso2"
+            aria-expanded="false"
+            aria-controls="collapseCurso2"
+          >
+            Curso 2
+          </button>
+        </h2>
+      </div>
+      <div
+        id="collapseCurso2"
+        class="collapse"
+        aria-labelledby="headingCurso2"
+        data-parent="#cursosAccordion"
+      >
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">Jueves: 10:00 - 12:00</li>
+            <li class="list-group-item">Viernes: 11:00 - 13:00</li>
+            <li class="list-group-item">Sábado: 09:00 - 11:00</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="text-center mt-5">Registro de Datos</h2>
+  <form id="registroForm">
+    <div class="form-group">
+      <label for="nombres">Nombres</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombres"
+        name="nombres"
+        maxlength="200"
+      />
+    </div>
+    <div class="form-group">
+      <label for="primer_apellido">Primer Apellido</label>
+      <input
+        type="text"
+        class="form-control"
+        id="primer_apellido"
+        name="primer_apellido"
+        maxlength="200"
+      />
+    </div>
+    <div class="form-group">
+      <label for="segundo_apellido">Segundo Apellido</label>
+      <input
+        type="text"
+        class="form-control"
+        id="segundo_apellido"
+        name="segundo_apellido"
+        maxlength="200"
+      />
+    </div>
+    <div class="form-group">
+      <label for="birthdate">Fecha de Nacimiento</label>
+      <input
+        type="date"
+        class="form-control"
+        id="birthdate"
+        name="birthdate"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="respuesta_positiva">Estado</label>
+      <select
+        class="form-control"
+        id="respuesta_positiva"
+        name="respuesta_positiva"
+      >
+        <option value="true" selected="true">Ciudad de Mexico</option>
+        <option value="false">Estado de Mexico</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="numero_contacto">Número de Contacto</label>
+      <input
+        type="text"
+        class="form-control"
+        id="numero_contacto"
+        name="numero_contacto"
+        maxlength="20"
+      />
+    </div>
+    <div class="form-group">
+      <label for="folio">Folio</label>
+      <input
+        type="text"
+        class="form-control"
+        id="folio"
+        name="folio"
+        maxlength="200"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+  </form>
+</div>

@@ -1,0 +1,578 @@
+<div class="container">
+  <h1 class="text-center mt-4">Detalles del Curso</h1>
+  <ul class="nav nav-tabs" id="courseTab" role="tablist">
+    <li class="nav-item">
+      <a
+        class="nav-link active"
+        id="detail-tab"
+        data-toggle="tab"
+        href="#detail"
+        role="tab"
+        aria-controls="detail"
+        aria-selected="true"
+        >Detalle</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="schedule-tab"
+        data-toggle="tab"
+        href="#schedule"
+        role="tab"
+        aria-controls="schedule"
+        aria-selected="false"
+        >Horarios</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="gallery-tab"
+        data-toggle="tab"
+        href="#gallery"
+        role="tab"
+        aria-controls="gallery"
+        aria-selected="false"
+        >Galería de Imágenes</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="summary-tab"
+        data-toggle="tab"
+        href="#summary"
+        role="tab"
+        aria-controls="summary"
+        aria-selected="false"
+        >Resumen de Horarios</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="temario-tab"
+        data-toggle="tab"
+        href="#temario"
+        role="tab"
+        aria-controls="temario"
+        aria-selected="false"
+        >Temario</a
+      >
+    </li>
+  </ul>
+  <div class="tab-content" id="courseTabContent">
+    <div
+      class="tab-pane fade show active"
+      id="detail"
+      role="tabpanel"
+      aria-labelledby="detail-tab"
+    >
+      <div class="mt-4">
+        <h2>Detalles del Curso</h2>
+        <p>
+          Aquí se encuentra la descripción del curso, los objetivos y el
+          contenido que se cubrirá.
+        </p>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="schedule"
+      role="tabpanel"
+      aria-labelledby="schedule-tab"
+    >
+      <div class="mt-4">
+        <h2>Horarios</h2>
+        <form id="scheduleForm">
+          <div class="accordion" id="scheduleAccordion">
+            <div class="card">
+              <div class="card-header" id="headingMonday">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseMonday"
+                    aria-expanded="true"
+                    aria-controls="collapseMonday"
+                  >
+                    Lunes
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseMonday"
+                class="collapse show"
+                aria-labelledby="headingMonday"
+                data-parent="#scheduleAccordion"
+              >
+                <div class="card-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="monday1"
+                      name="monday"
+                      value="09:00 - 11:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="monday1"
+                      >09:00 - 11:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="monday2"
+                      name="monday"
+                      value="13:00 - 15:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="monday2"
+                      >13:00 - 15:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="monday3"
+                      name="monday"
+                      value="16:00 - 18:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="monday3"
+                      >16:00 - 18:00 (2 horas)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTuesday">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseTuesday"
+                    aria-expanded="false"
+                    aria-controls="collapseTuesday"
+                  >
+                    Martes
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseTuesday"
+                class="collapse"
+                aria-labelledby="headingTuesday"
+                data-parent="#scheduleAccordion"
+              >
+                <div class="card-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="tuesday1"
+                      name="tuesday"
+                      value="09:00 - 11:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="tuesday1"
+                      >09:00 - 11:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="tuesday2"
+                      name="tuesday"
+                      value="14:00 - 16:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="tuesday2"
+                      >14:00 - 16:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="tuesday3"
+                      name="tuesday"
+                      value="17:00 - 19:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="tuesday3"
+                      >17:00 - 19:00 (2 horas)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingWednesday">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseWednesday"
+                    aria-expanded="false"
+                    aria-controls="collapseWednesday"
+                  >
+                    Miércoles
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseWednesday"
+                class="collapse"
+                aria-labelledby="headingWednesday"
+                data-parent="#scheduleAccordion"
+              >
+                <div class="card-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="wednesday1"
+                      name="wednesday"
+                      value="08:00 - 10:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="wednesday1"
+                      >08:00 - 10:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="wednesday2"
+                      name="wednesday"
+                      value="12:00 - 14:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="wednesday2"
+                      >12:00 - 14:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="wednesday3"
+                      name="wednesday"
+                      value="15:00 - 17:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="wednesday3"
+                      >15:00 - 17:00 (2 horas)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThursday">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseThursday"
+                    aria-expanded="false"
+                    aria-controls="collapseThursday"
+                  >
+                    Jueves
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseThursday"
+                class="collapse"
+                aria-labelledby="headingThursday"
+                data-parent="#scheduleAccordion"
+              >
+                <div class="card-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="thursday1"
+                      name="thursday"
+                      value="10:00 - 12:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="thursday1"
+                      >10:00 - 12:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="thursday2"
+                      name="thursday"
+                      value="13:00 - 15:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="thursday2"
+                      >13:00 - 15:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="thursday3"
+                      name="thursday"
+                      value="18:00 - 20:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="thursday3"
+                      >18:00 - 20:00 (2 horas)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingFriday">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseFriday"
+                    aria-expanded="false"
+                    aria-controls="collapseFriday"
+                  >
+                    Viernes
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseFriday"
+                class="collapse"
+                aria-labelledby="headingFriday"
+                data-parent="#scheduleAccordion"
+              >
+                <div class="card-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="friday1"
+                      name="friday"
+                      value="08:00 - 10:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="friday1"
+                      >08:00 - 10:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="friday2"
+                      name="friday"
+                      value="11:00 - 13:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="friday2"
+                      >11:00 - 13:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="friday3"
+                      name="friday"
+                      value="14:00 - 16:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="friday3"
+                      >14:00 - 16:00 (2 horas)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingSaturday">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseSaturday"
+                    aria-expanded="false"
+                    aria-controls="collapseSaturday"
+                  >
+                    Sábado
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseSaturday"
+                class="collapse"
+                aria-labelledby="headingSaturday"
+                data-parent="#scheduleAccordion"
+              >
+                <div class="card-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="saturday1"
+                      name="saturday"
+                      value="09:00 - 11:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="saturday1"
+                      >09:00 - 11:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="saturday2"
+                      name="saturday"
+                      value="12:00 - 14:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="saturday2"
+                      >12:00 - 14:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="saturday3"
+                      name="saturday"
+                      value="15:00 - 17:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="saturday3"
+                      >15:00 - 17:00 (2 horas)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingSunday">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseSunday"
+                    aria-expanded="false"
+                    aria-controls="collapseSunday"
+                  >
+                    Domingo
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseSunday"
+                class="collapse"
+                aria-labelledby="headingSunday"
+                data-parent="#scheduleAccordion"
+              >
+                <div class="card-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="sunday1"
+                      name="sunday"
+                      value="10:00 - 12:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="sunday1"
+                      >10:00 - 12:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="sunday2"
+                      name="sunday"
+                      value="13:00 - 15:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="sunday2"
+                      >13:00 - 15:00 (2 horas)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="sunday3"
+                      name="sunday"
+                      value="16:00 - 18:00 (2 horas)"
+                    />
+                    <label class="form-check-label" for="sunday3"
+                      >16:00 - 18:00 (2 horas)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary mt-4">
+            Seleccionar Horarios
+          </button>
+        </form>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="gallery"
+      role="tabpanel"
+      aria-labelledby="gallery-tab"
+    >
+      <div class="mt-4">
+        <h2>Galería de Imágenes</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="imagen1.jpg" class="img-fluid" alt="Imagen 1" />
+          </div>
+          <div class="col-md-4">
+            <img src="imagen2.jpg" class="img-fluid" alt="Imagen 2" />
+          </div>
+          <div class="col-md-4">
+            <img src="imagen3.jpg" class="img-fluid" alt="Imagen 3" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="summary"
+      role="tabpanel"
+      aria-labelledby="summary-tab"
+    >
+      <div class="mt-4">
+        <h2>Resumen de Horarios Seleccionados</h2>
+        <div id="summaryContent">
+          <p>No se han seleccionado horarios.</p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="temario"
+      role="tabpanel"
+      aria-labelledby="temario-tab"
+    >
+      <div class="mt-4">
+        <h2>Temario del Curso</h2>
+        <ul class="list-group">
+          <!-- Aquí se deben añadir los temas del curso dinámicamente -->
+          <li class="list-group-item">Introducción a la Programación</li>
+          <li class="list-group-item">Estructuras de Datos</li>
+          <li class="list-group-item">Algoritmos y Complejidad</li>
+          <li class="list-group-item">Bases de Datos</li>
+          <li class="list-group-item">Desarrollo Web</li>
+          <!-- Más temas según sea necesario -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

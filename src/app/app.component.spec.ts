@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'neocomipy-ng'`, () => {
+  it(`should have as title 'comipy-ng'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('neocomipy-ng');
+    expect(app.title).toEqual('comipy-ng');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, neocomipy-ng');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, comipy-ng');
   });
 });

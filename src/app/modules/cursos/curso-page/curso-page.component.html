@@ -1,0 +1,300 @@
+<div class="container">
+  <h1 class="text-center mt-4">Detalles del Curso</h1>
+  <ul class="nav nav-tabs" id="courseTab" role="tablist">
+    <li class="nav-item">
+      <a
+        class="nav-link active"
+        id="detail-tab"
+        data-toggle="tab"
+        href="#detail"
+        role="tab"
+        aria-controls="detail"
+        aria-selected="true"
+        >Detalle</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="schedule-tab"
+        data-toggle="tab"
+        href="#schedule"
+        role="tab"
+        aria-controls="schedule"
+        aria-selected="false"
+        >Horarios</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="gallery-tab"
+        data-toggle="tab"
+        href="#gallery"
+        role="tab"
+        aria-controls="gallery"
+        aria-selected="false"
+        >Galería de Imágenes</a
+      >
+    </li>
+  </ul>
+  <div class="tab-content" id="courseTabContent">
+    <div
+      class="tab-pane fade show active"
+      id="detail"
+      role="tabpanel"
+      aria-labelledby="detail-tab"
+    >
+      <div class="mt-4">
+        <h2>Detalles del Curso</h2>
+        <p>
+          Aquí se encuentra la descripción del curso, los objetivos y el
+          contenido que se cubrirá.
+        </p>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="schedule"
+      role="tabpanel"
+      aria-labelledby="schedule-tab"
+    >
+      <div class="mt-4">
+        <h2>Horarios</h2>
+        <div class="accordion" id="scheduleAccordion">
+          <div class="card">
+            <div class="card-header" id="headingMonday">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseMonday"
+                  aria-expanded="true"
+                  aria-controls="collapseMonday"
+                >
+                  Lunes
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseMonday"
+              class="collapse show"
+              aria-labelledby="headingMonday"
+              data-parent="#scheduleAccordion"
+            >
+              <div class="card-body">
+                <ul>
+                  <li>09:00 - 11:00 (2 horas)</li>
+                  <li>13:00 - 15:00 (2 horas)</li>
+                  <li>16:00 - 18:00 (2 horas)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTuesday">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseTuesday"
+                  aria-expanded="false"
+                  aria-controls="collapseTuesday"
+                >
+                  Martes
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseTuesday"
+              class="collapse"
+              aria-labelledby="headingTuesday"
+              data-parent="#scheduleAccordion"
+            >
+              <div class="card-body">
+                <ul>
+                  <li>09:00 - 11:00 (2 horas)</li>
+                  <li>14:00 - 16:00 (2 horas)</li>
+                  <li>17:00 - 19:00 (2 horas)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingWednesday">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseWednesday"
+                  aria-expanded="false"
+                  aria-controls="collapseWednesday"
+                >
+                  Miércoles
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseWednesday"
+              class="collapse"
+              aria-labelledby="headingWednesday"
+              data-parent="#scheduleAccordion"
+            >
+              <div class="card-body">
+                <ul>
+                  <li>08:00 - 10:00 (2 horas)</li>
+                  <li>12:00 - 14:00 (2 horas)</li>
+                  <li>15:00 - 17:00 (2 horas)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThursday">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseThursday"
+                  aria-expanded="false"
+                  aria-controls="collapseThursday"
+                >
+                  Jueves
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseThursday"
+              class="collapse"
+              aria-labelledby="headingThursday"
+              data-parent="#scheduleAccordion"
+            >
+              <div class="card-body">
+                <ul>
+                  <li>10:00 - 12:00 (2 horas)</li>
+                  <li>13:00 - 15:00 (2 horas)</li>
+                  <li>18:00 - 20:00 (2 horas)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFriday">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseFriday"
+                  aria-expanded="false"
+                  aria-controls="collapseFriday"
+                >
+                  Viernes
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseFriday"
+              class="collapse"
+              aria-labelledby="headingFriday"
+              data-parent="#scheduleAccordion"
+            >
+              <div class="card-body">
+                <ul>
+                  <li>08:00 - 10:00 (2 horas)</li>
+                  <li>11:00 - 13:00 (2 horas)</li>
+                  <li>14:00 - 16:00 (2 horas)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSaturday">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseSaturday"
+                  aria-expanded="false"
+                  aria-controls="collapseSaturday"
+                >
+                  Sábado
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseSaturday"
+              class="collapse"
+              aria-labelledby="headingSaturday"
+              data-parent="#scheduleAccordion"
+            >
+              <div class="card-body">
+                <ul>
+                  <li>09:00 - 11:00 (2 horas)</li>
+                  <li>12:00 - 14:00 (2 horas)</li>
+                  <li>15:00 - 17:00 (2 horas)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSunday">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseSunday"
+                  aria-expanded="false"
+                  aria-controls="collapseSunday"
+                >
+                  Domingo
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseSunday"
+              class="collapse"
+              aria-labelledby="headingSunday"
+              data-parent="#scheduleAccordion"
+            >
+              <div class="card-body">
+                <ul>
+                  <li>10:00 - 12:00 (2 horas)</li>
+                  <li>13:00 - 15:00 (2 horas)</li>
+                  <li>16:00 - 18:00 (2 horas)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="gallery"
+      role="tabpanel"
+      aria-labelledby="gallery-tab"
+    >
+      <div class="mt-4">
+        <h2>Galería de Imágenes</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="imagen1.jpg" class="img-fluid" alt="Imagen 1" />
+          </div>
+          <div class="col-md-4">
+            <img src="imagen2.jpg" class="img-fluid" alt="Imagen 2" />
+          </div>
+          <div class="col-md-4">
+            <img src="imagen3.jpg" class="img-fluid" alt="Imagen 3" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

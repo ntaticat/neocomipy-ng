@@ -1,0 +1,27 @@
+<header class="bg-light text-dark p-3 border-bottom">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a routerLink="/" class="text-dark text-decoration-none">
+      <h1 class="h4 m-0">Comipy</h1>
+    </a>
+    <div>
+      <div class="user-info" id="user-info">
+        <img
+          class="profile-image"
+          src="https://www.creativefabrica.com/wp-content/uploads/2020/08/25/Cute-Penguin-Illustration-Graphics-5116637-1.png"
+          alt="User Image"
+          id="user-image"
+        />
+        <span id="user-name">Nombre Completo del Usuario</span>
+      </div>
+      <button
+        class="btn btn-outline-primary ml-3"
+        id="auth-button"
+        style="display: none"
+      >
+        Docentes
+      </button>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
