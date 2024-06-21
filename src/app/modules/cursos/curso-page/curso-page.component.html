@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center mt-4">Detalles del Curso</h1>
+  <h1 class="text-center mt-4">{{ cursoData.identificador }}</h1>
   <ul class="nav nav-tabs" id="courseTab" role="tablist">
     <li class="nav-item">
       <a
@@ -48,8 +48,7 @@
       <div class="mt-4">
         <h2>Detalles del Curso</h2>
         <p>
-          Aquí se encuentra la descripción del curso, los objetivos y el
-          contenido que se cubrirá.
+          {{ cursoData.descripcion }}
         </p>
       </div>
     </div>
@@ -115,9 +114,13 @@
             >
               <div class="card-body">
                 <ul>
-                  <li>09:00 - 11:00 (2 horas)</li>
+                  @for (horarioData of cursoData.horarios; track $index) { @if
+                  (horarioData.dia_semana === 'Martes') {
+                  <li>{{ horarioData.hora_inicio }} 09:00 - 11:00 (2 horas)</li>
+                  } }
+                  <!-- <li>09:00 - 11:00 (2 horas)</li>
                   <li>14:00 - 16:00 (2 horas)</li>
-                  <li>17:00 - 19:00 (2 horas)</li>
+                  <li>17:00 - 19:00 (2 horas)</li> -->
                 </ul>
               </div>
             </div>

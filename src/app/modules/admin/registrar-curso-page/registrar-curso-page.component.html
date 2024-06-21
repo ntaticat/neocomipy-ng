@@ -1,26 +1,40 @@
 <div class="container">
   <h1 class="text-center mt-4">Registro de Curso</h1>
-  <form id="cursoForm">
+  <form
+    [formGroup]="cursoForm"
+    (ngSubmit)="$event.preventDefault(); onSubmit()"
+  >
     <div class="form-group">
       <label for="identificador">Identificador</label>
       <input
         type="text"
         class="form-control"
         id="identificador"
-        name="identificador"
+        formControlName="identificador"
         maxlength="100"
         required
       />
+      <div
+        *ngIf="
+          cursoForm.get('identificador')?.invalid &&
+          cursoForm.get('identificador')?.touched
+        "
+        class="text-danger"
+      >
+        Identificador es requerido y no debe exceder los 100 caracteres.
+      </div>
     </div>
     <div class="form-group">
       <label for="descripcion">Descripción</label>
       <textarea
         class="form-control"
         id="descripcion"
-        name="descripcion"
+        formControlName="descripcion"
         rows="4"
       ></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Registrar</button>
+    <button type="submit" [disabled]="!cursoForm.valid" class="btn btn-primary">
+      Registrar
+    </button>
   </form>
 </div>

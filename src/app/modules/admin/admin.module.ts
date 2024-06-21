@@ -7,7 +7,7 @@ import { RegistrarHorarioPageComponent } from './registrar-horario-page/registra
 import { RegistrarDocentePageComponent } from './registrar-docente-page/registrar-docente-page.component';
 import { RegistrarTemaPageComponent } from './registrar-tema-page/registrar-tema-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +15,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
     RegistrarHorarioPageComponent,
     RegistrarDocentePageComponent,
     RegistrarTemaPageComponent,
-    AdminPageComponent
+    AdminPageComponent,
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule
-  ]
+  imports: [CommonModule, AdminRoutingModule, ReactiveFormsModule],
 })
-export class AdminModule { }
+export class AdminModule {}

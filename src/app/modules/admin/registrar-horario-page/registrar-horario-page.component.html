@@ -1,25 +1,49 @@
 <div class="container">
   <h1 class="text-center mt-4">Registro de Horario</h1>
-  <form id="horarioForm">
+  <form [formGroup]="horarioForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="curso">Curso</label>
-      <select class="form-control" id="curso" name="curso_id" required>
-        <!-- Options for cursos should be populated dynamically -->
+      <select
+        class="form-control"
+        id="curso"
+        formControlName="curso_id"
+        required
+      >
         <option value="">Seleccione un curso</option>
-        <option value="1">Curso 1</option>
-        <option value="2">Curso 2</option>
+        <option *ngFor="let curso of cursosData" [value]="curso.curso_id">
+          {{ curso.identificador }}
+        </option>
       </select>
+      <div
+        *ngIf="
+          horarioForm.get('curso_id')?.invalid &&
+          horarioForm.get('curso_id')?.touched
+        "
+        class="text-danger"
+      >
+        El curso es requerido.
+      </div>
     </div>
     <div class="form-group">
       <label for="dia_semana">Día de la Semana</label>
-      <input
-        type="text"
+      <select
         class="form-control"
         id="dia_semana"
-        name="dia_semana"
-        maxlength="20"
+        formControlName="dia_semana"
         required
-      />
+      >
+        <option value="">Seleccione un día</option>
+        <option *ngFor="let dia of diasSemana" [value]="dia">{{ dia }}</option>
+      </select>
+      <div
+        *ngIf="
+          horarioForm.get('dia_semana')?.invalid &&
+          horarioForm.get('dia_semana')?.touched
+        "
+        class="text-danger"
+      >
+        El día de la semana es requerido.
+      </div>
     </div>
     <div class="form-group">
       <label for="hora_inicio">Hora de Inicio</label>
@@ -27,9 +51,18 @@
         type="time"
         class="form-control"
         id="hora_inicio"
-        name="hora_inicio"
+        formControlName="hora_inicio"
         required
       />
+      <div
+        *ngIf="
+          horarioForm.get('hora_inicio')?.invalid &&
+          horarioForm.get('hora_inicio')?.touched
+        "
+        class="text-danger"
+      >
+        La hora de inicio es requerida.
+      </div>
     </div>
     <div class="form-group">
       <label for="duracion">Duración (minutos)</label>
@@ -37,10 +70,19 @@
         type="number"
         class="form-control"
         id="duracion"
-        name="duracion"
+        formControlName="duracion"
         min="0"
         required
       />
+      <div
+        *ngIf="
+          horarioForm.get('duracion')?.invalid &&
+          horarioForm.get('duracion')?.touched
+        "
+        class="text-danger"
+      >
+        La duración es requerida y debe ser un valor positivo.
+      </div>
     </div>
     <div class="form-group">
       <label for="turno">Turno</label>
@@ -48,11 +90,25 @@
         type="text"
         class="form-control"
         id="turno"
-        name="turno"
+        formControlName="turno"
         maxlength="20"
         required
       />
+      <div
+        *ngIf="
+          horarioForm.get('turno')?.invalid && horarioForm.get('turno')?.touched
+        "
+        class="text-danger"
+      >
+        El turno es requerido y no debe exceder los 20 caracteres.
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Registrar</button>
+    <button
+      type="submit"
+      [disabled]="!horarioForm.valid"
+      class="btn btn-primary"
+    >
+      Registrar
+    </button>
   </form>
 </div>

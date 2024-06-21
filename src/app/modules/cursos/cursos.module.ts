@@ -5,15 +5,8 @@ import { CursosRoutingModule } from './cursos-routing.module';
 import { CursosPageComponent } from './cursos-page/cursos-page.component';
 import { CursoPageComponent } from './curso-page/curso-page.component';
 
-
 @NgModule({
-  declarations: [
-    CursosPageComponent,
-    CursoPageComponent
-  ],
-  imports: [
-    CommonModule,
-    CursosRoutingModule
-  ]
+  declarations: [CursosPageComponent, CursoPageComponent],
+  imports: [CommonModule, CursosRoutingModule],
 })
-export class CursosModule { }
+export class CursosModule {}
