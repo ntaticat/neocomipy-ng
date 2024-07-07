@@ -1,14 +1,27 @@
 <div class="container">
   <h1 class="text-center mt-4">Registro de Tema</h1>
-  <form id="temaForm">
+  <form [formGroup]="temaForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="curso">Curso</label>
-      <select class="form-control" id="curso" name="curso_id" required>
+      <select
+        class="form-control"
+        id="curso"
+        formControlName="curso_id"
+        required
+      >
         <option value="">Seleccione un curso</option>
         <option *ngFor="let curso of cursosData" [value]="curso.curso_id">
           {{ curso.identificador }}
         </option>
       </select>
+      <div
+        *ngIf="
+          temaForm.get('curso_id')?.invalid && temaForm.get('curso_id')?.touched
+        "
+        class="text-danger"
+      >
+        El curso es requerido.
+      </div>
     </div>
     <div class="form-group">
       <label for="titulo">Título</label>
@@ -16,20 +29,30 @@
         type="text"
         class="form-control"
         id="titulo"
-        name="titulo"
+        formControlName="titulo"
         maxlength="200"
         required
       />
+      <div
+        *ngIf="
+          temaForm.get('titulo')?.invalid && temaForm.get('titulo')?.touched
+        "
+        class="text-danger"
+      >
+        El título es requerido y no debe exceder los 200 caracteres.
+      </div>
     </div>
     <div class="form-group">
       <label for="descripcion">Descripción</label>
       <textarea
         class="form-control"
         id="descripcion"
-        name="descripcion"
+        formControlName="descripcion"
         rows="4"
       ></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Registrar</button>
+    <button type="submit" [disabled]="!temaForm.valid" class="btn btn-primary">
+      Registrar
+    </button>
   </form>
 </div>
