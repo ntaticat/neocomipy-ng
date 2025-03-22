@@ -37,6 +37,18 @@
         >Galería de Imágenes</a
       >
     </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="temario-tab"
+        data-toggle="tab"
+        href="#temario"
+        role="tab"
+        aria-controls="temario"
+        aria-selected="false"
+        >Temario</a
+      >
+    </li>
   </ul>
   <div class="tab-content" id="courseTabContent">
     <div
@@ -47,9 +59,7 @@
     >
       <div class="mt-4">
         <h2>Detalles del Curso</h2>
-        <p>
-          {{ cursoData.descripcion }}
-        </p>
+        <p>{{ cursoData.descripcion }}</p>
       </div>
     </div>
     <div
@@ -61,216 +71,34 @@
       <div class="mt-4">
         <h2>Horarios</h2>
         <div class="accordion" id="scheduleAccordion">
-          <div class="card">
-            <div class="card-header" id="headingMonday">
+          <div *ngFor="let horario of cursoData.horarios" class="card">
+            <div class="card-header" [attr.id]="'heading' + horario.dia_semana">
               <h2 class="mb-0">
                 <button
                   class="btn btn-link"
                   type="button"
                   data-toggle="collapse"
-                  data-target="#collapseMonday"
+                  [attr.data-target]="'#collapse' + horario.dia_semana"
                   aria-expanded="true"
-                  aria-controls="collapseMonday"
+                  [attr.aria-controls]="'collapse' + horario.dia_semana"
                 >
-                  Lunes
+                  {{ horario.dia_semana }}
                 </button>
               </h2>
             </div>
             <div
-              id="collapseMonday"
-              class="collapse show"
-              aria-labelledby="headingMonday"
-              data-parent="#scheduleAccordion"
-            >
-              <div class="card-body">
-                <ul>
-                  <li>09:00 - 11:00 (2 horas)</li>
-                  <li>13:00 - 15:00 (2 horas)</li>
-                  <li>16:00 - 18:00 (2 horas)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingTuesday">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseTuesday"
-                  aria-expanded="false"
-                  aria-controls="collapseTuesday"
-                >
-                  Martes
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseTuesday"
+              [attr.id]="'collapse' + horario.dia_semana"
               class="collapse"
-              aria-labelledby="headingTuesday"
+              [attr.aria-labelledby]="'heading' + horario.dia_semana"
               data-parent="#scheduleAccordion"
             >
               <div class="card-body">
                 <ul>
-                  @for (horarioData of cursoData.horarios; track $index) { @if
-                  (horarioData.dia_semana === 'Martes') {
-                  <li>{{ horarioData.hora_inicio }} 09:00 - 11:00 (2 horas)</li>
-                  } }
-                  <!-- <li>09:00 - 11:00 (2 horas)</li>
-                  <li>14:00 - 16:00 (2 horas)</li>
-                  <li>17:00 - 19:00 (2 horas)</li> -->
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingWednesday">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseWednesday"
-                  aria-expanded="false"
-                  aria-controls="collapseWednesday"
-                >
-                  Miércoles
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseWednesday"
-              class="collapse"
-              aria-labelledby="headingWednesday"
-              data-parent="#scheduleAccordion"
-            >
-              <div class="card-body">
-                <ul>
-                  <li>08:00 - 10:00 (2 horas)</li>
-                  <li>12:00 - 14:00 (2 horas)</li>
-                  <li>15:00 - 17:00 (2 horas)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThursday">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseThursday"
-                  aria-expanded="false"
-                  aria-controls="collapseThursday"
-                >
-                  Jueves
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseThursday"
-              class="collapse"
-              aria-labelledby="headingThursday"
-              data-parent="#scheduleAccordion"
-            >
-              <div class="card-body">
-                <ul>
-                  <li>10:00 - 12:00 (2 horas)</li>
-                  <li>13:00 - 15:00 (2 horas)</li>
-                  <li>18:00 - 20:00 (2 horas)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingFriday">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseFriday"
-                  aria-expanded="false"
-                  aria-controls="collapseFriday"
-                >
-                  Viernes
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseFriday"
-              class="collapse"
-              aria-labelledby="headingFriday"
-              data-parent="#scheduleAccordion"
-            >
-              <div class="card-body">
-                <ul>
-                  <li>08:00 - 10:00 (2 horas)</li>
-                  <li>11:00 - 13:00 (2 horas)</li>
-                  <li>14:00 - 16:00 (2 horas)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingSaturday">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseSaturday"
-                  aria-expanded="false"
-                  aria-controls="collapseSaturday"
-                >
-                  Sábado
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseSaturday"
-              class="collapse"
-              aria-labelledby="headingSaturday"
-              data-parent="#scheduleAccordion"
-            >
-              <div class="card-body">
-                <ul>
-                  <li>09:00 - 11:00 (2 horas)</li>
-                  <li>12:00 - 14:00 (2 horas)</li>
-                  <li>15:00 - 17:00 (2 horas)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingSunday">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseSunday"
-                  aria-expanded="false"
-                  aria-controls="collapseSunday"
-                >
-                  Domingo
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseSunday"
-              class="collapse"
-              aria-labelledby="headingSunday"
-              data-parent="#scheduleAccordion"
-            >
-              <div class="card-body">
-                <ul>
-                  <li>10:00 - 12:00 (2 horas)</li>
-                  <li>13:00 - 15:00 (2 horas)</li>
-                  <li>16:00 - 18:00 (2 horas)</li>
+                  <li>
+                    Hora de Inicio: {{ horario.hora_inicio }} <br />
+                    Duración: {{ horario.duracion }} minutos <br />
+                    Turno: {{ horario.turno }}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -297,6 +125,22 @@
             <img src="imagen3.jpg" class="img-fluid" alt="Imagen 3" />
           </div>
         </div>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="temario"
+      role="tabpanel"
+      aria-labelledby="temario-tab"
+    >
+      <div class="mt-4">
+        <h2>Temario del Curso</h2>
+        <ul class="list-group">
+          <li *ngFor="let tema of cursoData.temas" class="list-group-item">
+            <h5>{{ tema.titulo }}</h5>
+            <p>{{ tema.descripcion }}</p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

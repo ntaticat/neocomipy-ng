@@ -39,4 +39,10 @@ export class InteresadosService {
 
     return this.http.post<IInteresado>(method, request);
   }
+
+  getInteresado(interesadoId: number): Observable<IInteresado> {
+    const method = `${this.url}/interesados/${interesadoId}`;
+
+    return this.http.get<IInteresado>(method);
+  }
 }

@@ -30,7 +30,7 @@ const routes: Routes = [
         component: DifusionCursosPageComponent,
       },
       {
-        path: ':id/curso',
+        path: ':id/curso/:cursoId',
         component: DifusionCursoPageComponent,
       },
       {
